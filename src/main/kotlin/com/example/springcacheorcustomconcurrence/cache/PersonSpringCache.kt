@@ -13,5 +13,5 @@ class PersonSpringCache {
     fun get(name: String) = Optional.empty<Person>()
 
     @CachePut("persons", key = "#person.name")
-    fun increment(person: Person) = person.also { println("cached $person") }
+    fun increment(person: Person) = person
 }

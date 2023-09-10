@@ -13,6 +13,7 @@ class PersonCache {
         return cache[name]
     }
 
+    @Synchronized
     fun increment(name: String): Person {
         cache.getOrDefault(name, Person(name, 0)).let {
             val newPerson = Person(it.name, it.hit + 1)
